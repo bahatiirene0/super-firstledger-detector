@@ -1,0 +1,163 @@
+/* styles.css */
+
+/* Reset default styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Header styling for the title */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  font-family: 'Georgia', serif;
+}
+
+/* Table styling */
+table#tokenTable {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+th, td {
+  border: 1px solid #e0e0e0;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+th {
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+/* Highlight rows based on confidence */
+tr.unsure {
+  background-color: #fff3cd;
+  transition: background-color 0.3s ease;
+}
+
+tr.unsure:hover {
+  background-color: #ffe6b3;
+}
+
+/* Hover effect for table rows */
+tr:not(.unsure):hover {
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+/* Performance stats styling (now as a glowing card) */
+h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+pre#stats {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #333;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  overflow-x: auto;
+  /* Glowing border effect */
+  border: 2px solid transparent;
+  outline: none;
+  position: relative;
+  /* Glow animation */
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Glowing border animation */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px #3498db, 0 0 10px #3498db, 0 0 15px #3498db, 0 0 20px #3498db;
+    border-color: #3498db;
+  }
+  to {
+    box-shadow: 0 0 10px #2980b9, 0 0 15px #2980b9, 0 0 20px #2980b9, 0 0 25px #2980b9;
+    border-color: #2980b9;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  table#tokenTable {
+    font-size: 0.8rem;
+  }
+
+  th, td {
+    padding: 8px 12px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  pre#stats {
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+}
+
+/* Additional styling for better visuals */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: -1;
+}
+
+table#tokenTable th:first-child,
+table#tokenTable td:first-child {
+  border-radius: 12px 0 0 0;
+}
+
+table#tokenTable th:last-child,
+table#tokenTable td:last-child {
+  border-radius: 0 12px 0 0;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.3s ease;
+}
