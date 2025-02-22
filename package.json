@@ -1,0 +1,23 @@
+{
+    "name": "super-firstledger-detector",
+    "version": "1.0.0",
+    "main": "src/server.js",
+    "scripts": {
+        "start": "node src/server.js",
+        "test": "jest"
+    },
+    "dependencies": {
+        "express": "^4.21.2",
+        "sqlite3": "^5.1.7",
+        "winston": "^3.17.0",
+        "ws": "^8.18.1",
+        "xrpl": "^3.1.0"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
+}
